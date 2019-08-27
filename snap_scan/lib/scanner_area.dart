@@ -9,7 +9,7 @@ class ScannerArea extends StatefulWidget {
 
 class _ScannerAreaState extends State<ScannerArea> {
 
-  String qr;
+  String id;
   bool camState = true;
 
   @override
@@ -46,19 +46,19 @@ class _ScannerAreaState extends State<ScannerArea> {
               hintText: 'Enter R# or VIN# or Stock#'),
         ),
         DividerLine(4, GreyColor, 0),
-        Expanded(  //area to plugin viewfinder/scanner
+        Expanded(  //area for viewfinder/scanner
           child: Container(
-              child: camState
+              child: camState  //built in from qr plugin
                     ? new Center(
-                        child: new SizedBox(
+                        child: new SizedBox(  //QrCamera has to be inside either a box or container
                           child: new QrCamera(
                             onError: (context, error) => Text(
                                   error.toString(),
                                   style: TextStyle(color: Colors.red),
                                 ),
-                            qrCodeCallback: (code) {
+                            qrCodeCallback: (code) {  //scanning barcodes returns a code
                               setState(() {
-                                qr = code;
+                                id = code;  //pass the retrieved code to id string
                               });
                             },
                           ),
@@ -73,7 +73,7 @@ class _ScannerAreaState extends State<ScannerArea> {
           floatingActionButton: new FloatingActionButton(
           tooltip: 'Toggle View Finder',
           child: Icon(Icons.wb_iridescent, size: 32),
-          backgroundColor: Color(0xFF14B46E),
+          backgroundColor: camState? Color(0xFFB4146E): Color(0xFF14B46E),
           onPressed: () {
             setState(() {
               camState = !camState;

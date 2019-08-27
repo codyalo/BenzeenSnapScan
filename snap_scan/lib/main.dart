@@ -8,10 +8,10 @@ import 'package:snap_scan/images_area.dart';
 
 // entry point for the app,
 // the => operator is shorthand for {} when there is only one line of code
-void main() => runApp(MyApp());
+void main() => runApp(SnapScan());
 
 // the root widget of our application
-class MyApp extends StatelessWidget {
+class SnapScan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
