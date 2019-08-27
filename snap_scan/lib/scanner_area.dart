@@ -17,8 +17,6 @@ class _ScannerAreaState extends State<ScannerArea> {
     super.initState();
   }
 
-//  ScannerArea();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
