@@ -22,6 +22,7 @@ class HistoryArea extends StatelessWidget {
         preferredSize: Size.fromHeight(36.0),
         child: AppBar(
           title: Text("Upload History", style: TextStyle(color: Colors.black)),
+          automaticallyImplyLeading: false,
           backgroundColor: OrangeColor,
           elevation: 0,  //0 removes drop shadow
         ),

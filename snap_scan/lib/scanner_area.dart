@@ -23,8 +23,8 @@ class _ScannerAreaState extends State<ScannerArea> {
       appBar: PreferredSize(
       preferredSize: Size.fromHeight(36.0),
       child: AppBar(
-        title:
-            Text("Scan Part or Vehicle", style: TextStyle(color: Colors.black)),
+        title: Text("Scan Part or Vehicle", style: TextStyle(color: Colors.black)),
+        automaticallyImplyLeading: false,
         backgroundColor: OrangeColor,
         elevation: 0,
       ),

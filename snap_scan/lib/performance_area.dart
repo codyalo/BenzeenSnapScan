@@ -13,8 +13,8 @@ class PerformanceArea extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(36.0),
         child: AppBar(
-          title: Text("Daily Processed Parts & Vehicles",
-              style: TextStyle(color: Colors.black)),
+          title: Text("Daily Processed Parts & Vehicles", style: TextStyle(color: Colors.black)),
+          automaticallyImplyLeading: false,
           backgroundColor: OrangeColor,
           elevation: 0,
         ),
