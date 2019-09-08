@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:snap_scan/json_post.dart';
 //import 'dart:io';
 
-String url = "http://api.benzeenautoparts.com/WebApi/ViewPartDetails";
+//String url = "http://api.benzeenautoparts.com/WebApi/ViewPartDetails";
 
 var apiParams = {
   "AccessToken": "78516d0d287647af8ba8efd9f7ac35e1",
