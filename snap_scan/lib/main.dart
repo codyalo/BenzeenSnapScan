@@ -27,6 +27,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("SnapScan"),
+        elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: Colors.black,
@@ -60,6 +61,7 @@ class DetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Part/Vehicle #"),
+        elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: OrangeColor,
