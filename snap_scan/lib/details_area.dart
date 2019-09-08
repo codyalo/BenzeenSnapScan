@@ -2,47 +2,58 @@ import 'package:flutter/material.dart';
 import 'package:snap_scan/layout_elements.dart';
 import 'package:snap_scan/api_services.dart';
 import 'package:snap_scan/json_post.dart';
+//import 'package:snap_scan/main.dart';
 
 class DetailsArea extends StatelessWidget {
-  DetailsArea();
+  // DetailsArea();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false, //don't resize to fit keyboard
-      body: Column(
-        children: [
-          Expanded(
-            //take up the entire allowed area
-            child: Container(
-              //give the entire detail text area a white baground
-              color: Colors.white,
-              padding: EdgeInsets.only(left: 16, top: 16, right: 16, bottom: 8),
-              child: FutureBuilder<Post>(
-                  future: getPost(),
-                  builder: (context, snapshot) {
-                    return Column(
+    return FutureBuilder<Post>(
+        future: getPost(),
+        builder: (context, snapshot) {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text('${snapshot.data.roNum}',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 26.0,
+                      fontWeight: FontWeight.bold)),
+              elevation: 0,
+              automaticallyImplyLeading: false,
+              centerTitle: true,
+              backgroundColor: OrangeColor,
+            ),
+            resizeToAvoidBottomInset: false, //don't resize to fit keyboard
+            body: Column(
+              children: [
+                Expanded(
+                  //take up the entire allowed area
+                  child: Container(
+                    //give the entire detail text area a white baground
+                    color: Colors.white,
+                    padding:
+                        EdgeInsets.only(left: 16, top: 8, right: 16, bottom: 8),
+                    child: Column(
                       //3 sections; part info, notes, image count
                       children: [
                         Container(
                           //part or vehicle info
-
                           child: Column(
                               //details page is made up of two rows
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Container(
-                                    height: 36,
+                                    height: 28,
                                     child: Text(
-                                        '${snapshot.data.roNum} ${snapshot.data.modelName}',
+                                        '${snapshot.data.modelYear} ${snapshot.data.modelName}',
                                         style: TextStyle(
                                             fontSize: 18.0,
                                             fontWeight: FontWeight.bold))),
                                 Container(
-                                    height: 36,
-                                    child: Text(
-                                        '${snapshot.data.partName}',
+                                    height: 28,
+                                    child: Text('${snapshot.data.partName}',
                                         style: TextStyle(
                                             fontSize: 18.0,
                                             fontWeight: FontWeight.bold))),
@@ -54,14 +65,14 @@ class DetailsArea extends StatelessWidget {
                                           CrossAxisAlignment.stretch,
                                       children: [
                                         Container(
-                                            height: 28,
+                                            height: 26,
                                             child: Text(
                                                 'Interchange: ' +
                                                     '${snapshot.data.invNum}',
                                                 style:
                                                     TextStyle(fontSize: 16.0))),
                                         Container(
-                                            height: 28,
+                                            height: 26,
                                             child: Text(
                                                 'Stock #: ' +
                                                     '${snapshot.data.stockNum}',
@@ -77,7 +88,7 @@ class DetailsArea extends StatelessWidget {
                                           CrossAxisAlignment.stretch,
                                       children: [
                                         Container(
-                                            height: 28,
+                                            height: 26,
                                             child: Text(
                                                 'Grade: ' +
                                                     '${snapshot.data.rating}',
@@ -85,7 +96,7 @@ class DetailsArea extends StatelessWidget {
                                                 style:
                                                     TextStyle(fontSize: 16.0))),
                                         Container(
-                                            height: 28,
+                                            height: 26,
                                             child: Text(
                                                 'Location: ' +
                                                     '${snapshot.data.location}',
@@ -117,12 +128,12 @@ class DetailsArea extends StatelessWidget {
                           height: 28,
                         ),
                       ],
-                    );
-                  }),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
-    );
+          );
+        });
   }
 }

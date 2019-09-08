@@ -56,7 +56,7 @@ String postToJson(Post data) {
 }
 
 class Post {
-    int roNum;
+    String roNum;
     int modelYear;
     String modelName;
     String partName;

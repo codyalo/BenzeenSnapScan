@@ -59,13 +59,6 @@ class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Part/Vehicle #"),
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        backgroundColor: OrangeColor,
-      ),
       resizeToAvoidBottomInset: false,  //don't resize to fit keyboard
 
       body: Column(  //details page is made up of two rows
@@ -73,11 +66,11 @@ class DetailsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            flex: 4,  //40% screen space
+            flex: 40,  //40% screen space
             child: DetailsArea(),  //text details for item
           ),
           Expanded(
-            flex: 6,  //60% screen space
+            flex: 60,  //60% screen space
             child: ImagesArea(MainPage()),  // images for item
           ),
         ],
